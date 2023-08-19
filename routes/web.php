@@ -27,6 +27,7 @@ Route::get('/creer_compte',[ticketController::class,'create_register'])->name('c
 
 Route::post('/ckeck_login',[ticketController::class,'ckeck_login'])->name('ckeck_login');
 Route::post('/create_user',[ticketController::class,'create_user'])->name('create_user');
+Route::get('/logout',[ticketController::class,'logout'])->name('logout');
 
 //_______________________________________________________________________________
 //___________________________________________________________________ Route admin

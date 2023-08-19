@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session as FacadesSession;
 
 class ticketController extends Controller
 {
@@ -38,6 +39,11 @@ class ticketController extends Controller
          ]);
 
          return redirect()->back();
+    }
+    public function logout(){
+        FacadesSession::flush();
+        auth()->logout();
+        return redirect('accueil');
     }
     public function login(){
         return view('page.login');

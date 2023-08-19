@@ -42,7 +42,7 @@
                             <li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
                             @if (Route::has('login'))
                                 @auth
-                                     <li><a href="{{route('accueil')}}"><i class="fa fa-lock"></i>Se connecter</a></li>
+                                     <li><a href="{{route('logout')}}"><i class="fa fa-lock"></i>se déconnecter</a></li>
                                 @else
                                     <li><a href="{{route('login')}}"><i class="fa fa-lock"></i> Se connecter</a></li>
                                     @if (Route::has('register'))
