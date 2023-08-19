@@ -17,4 +17,7 @@ Route::get('/', function () {
 });
 */
 Route::get('/',[ticketController::class,'accueil'])->name('accueil');
+Route::get('/Authentification',[ticketController::class,'login'])->name('login');
+Route::get('/contacter_nous',[ticketController::class,'contact'])->name('contact');
+
 
