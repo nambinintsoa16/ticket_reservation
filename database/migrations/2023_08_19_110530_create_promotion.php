@@ -14,13 +14,13 @@ return new class extends Migration
         Schema::create('promotion', function (Blueprint $table) {
             $table->id();
             $table->string("code_de_redustion");
-            $table->integer('id_produit');
+            $table->integer('produits_id');
             $table->string("reduction");
             $table->date("debut");
             $table->date("fin");
             $table->string("statut");
             $table->timestamps();    
-            $table->foreign('id_produit')->references('id')->on('produits')
+            $table->foreign('produits_id')->references('id')->on('produits')
             ->onDelete('restrict')
             ->onUpdate('restrict');
         });

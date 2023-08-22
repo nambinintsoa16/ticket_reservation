@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_commande');
-            $table->foreign('id_commande')->references('id')->on('commandes')
+            $table->integer('commandes_id');
+            $table->foreign('commandes_id')->references('id')->on('commandes')
             ->onDelete('restrict')
             ->onUpdate('restrict');
             $table->integer('montant');

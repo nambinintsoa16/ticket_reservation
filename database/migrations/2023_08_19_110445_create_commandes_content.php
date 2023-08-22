@@ -13,15 +13,15 @@ return new class extends Migration
     {
         Schema::create('commandes_content', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_commande');
-            $table->integer('id_produit');
+            $table->integer('commandes_id');
+            $table->integer('produits_id');
             $table->integer('quantite');
             $table->integer('prix');
             $table->timestamps();
-            $table->foreign('id_commande')->references('id')->on('commandes')
+            $table->foreign('commandes_id')->references('id')->on('commandes')
             ->onDelete('restrict')
             ->onUpdate('restrict');
-            $table->foreign('id_produit')->references('id')->on('produits')
+            $table->foreign('produits_id')->references('id')->on('produits')
             ->onDelete('restrict')
             ->onUpdate('restrict');
         

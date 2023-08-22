@@ -13,16 +13,16 @@ return new class extends Migration
     {
         Schema::create('facturation', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_commande');
-            $table->integer('id_client');
-            $table->integer('id_transaction');
-            $table->foreign('id_commande')->references('id')->on('commandes')
+            $table->integer('commandes_id');
+            $table->integer('clients_id');
+            $table->integer('transactions_id');
+            $table->foreign('commandes_id')->references('id')->on('commandes')
             ->onDelete('restrict')
             ->onUpdate('restrict');
-            $table->foreign('id_client')->references('id')->on('clients')
+            $table->foreign('clients_id')->references('id')->on('clients')
             ->onDelete('restrict')
             ->onUpdate('restrict');
-            $table->foreign('id_transaction')->references('id')->on('transactions')
+            $table->foreign('transactions_id')->references('id')->on('transactions')
             ->onDelete('restrict')
             ->onUpdate('restrict');
             $table->timestamps();

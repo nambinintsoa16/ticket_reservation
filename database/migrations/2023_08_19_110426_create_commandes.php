@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('commandes', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_client');
+            $table->integer('clients_id');
             $table->date('date_de_commande');
             $table->date('date_de_livraison');
             $table->string('statut');
             $table->timestamps();
-            $table->foreign('id_client')->references('id')->on('clients')
+            $table->foreign('clients_id')->references('id')->on('clients')
             ->onDelete('restrict')
             ->onUpdate('restrict');
         });
