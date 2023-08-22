@@ -26,6 +26,8 @@ Route::get('/contact',[ticketController::class,'contact'])->name('contact');
 Route::get('/creer_compte',[ticketController::class,'create_register'])->name('create_register');
 Route::get('/logout',[ticketController::class,'logout'])->name('logout');
 Route::get('/detail/{id}',[ticketController::class,'detail_event'])->name('detail_event');
+Route::get('/acheter_ticket/{id}',[ticketController::class,'acheter_ticket'])->name('acheter_ticket');
+
 
 Route::post('/ckeck_login',[ticketController::class,'ckeck_login'])->name('ckeck_login');
 Route::post('/create_user',[ticketController::class,'create_user'])->name('create_user');

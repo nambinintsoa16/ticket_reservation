@@ -5,7 +5,7 @@
     <div class="col-sm-8">
         <div class="view-product">
             <img src="{{asset("assets/images/product-details/iframe2.png")}}" alt="" />
-            <h3><a href="#">ACHETER VOTRE TICKET ICI</a></h3>
+            <h3><a href="{{route('acheter_ticket',['id'=>$parameter['data']['detail_event']->slug])}}">ACHETER VOTRE TICKET ICI</a></h3>
         </div>
     </div>
     <div class="col-sm-4">

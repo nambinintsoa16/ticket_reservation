@@ -32,6 +32,9 @@ class ticketController extends Controller
        $detail_event = Produits::where(["slug"=>$id])->first();
        return $this->render_view('page.detai_event',compact("detail_event"));
     }
+    public function acheter_ticket($id){
+        return $id;
+    }
 
     public function login(){
         return $this->render_view('page.login');
