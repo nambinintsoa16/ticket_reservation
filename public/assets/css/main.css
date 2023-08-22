@@ -1179,16 +1179,20 @@ h2.title {
 }
 
 .view-product h3 {
-  background: #FE980F;
+  background: #071ff5;
   bottom: 0;
   color: #FFFFFF;
   font-family: 'Roboto', sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   margin-bottom: 0;
   padding: 8px 20px;
   position: absolute;
   right: 0;
+}
+.view-product h3>a {
+   text-decoration: none;
+   color: #fff;
 }
 
 #similar-product .carousel-inner .item{

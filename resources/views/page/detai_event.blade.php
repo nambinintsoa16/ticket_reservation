@@ -5,11 +5,19 @@
     <div class="col-sm-8">
         <div class="view-product">
             <img src="{{asset("assets/images/product-details/iframe2.png")}}" alt="" />
+            <h3><a href="#">ACHETER VOTRE TICKET ICI</a></h3>
         </div>
     </div>
     <div class="col-sm-4">
         <div class="product-information"><!--/product-information-->
-            <h2>Place disponible</h2>
+                    <span>10</span> Place BALCON
+                <hr>
+                    <span>10</span> Place SIMPLE
+                <hr>
+                    <span>10</span> Place RESERVATION
+                <hr>
+                    <span>10</span> Place VIP
+
             <div id="enplacement_content" style="width: 250px"></div>
         </div><!--/product-information-->
     </div>
@@ -54,7 +62,7 @@
             priceFormatter: function(price) {
                 return 'MGA ' + price;
             }
-        }).render();*
+        }).render();*/
     });
 </script>
 @endsection
