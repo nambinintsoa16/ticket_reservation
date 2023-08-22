@@ -70,7 +70,7 @@
                                     </div>
                                     <div class="product-overlay">
                                         <div class="overlay-content">
-                                            <a href="{{route('detail_event',["id"=>$item->slug])}}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Acheter ticket</a>
+                                            <a href="{{route('detail_event',["id"=>$item->slug])}}" class="btn btn-default add-to-cart">Détail</a>
                                         </div>
                                     </div>
                             </div>
