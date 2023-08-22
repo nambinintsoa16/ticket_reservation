@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Categories;
 use App\Models\Produits;
+use App\Models\Slides;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -18,8 +19,20 @@ class ticketController extends Controller
     }
     public function accueil(){
        $liste_event_actif = Categories::with(["Produits"])->get();
-       return $this->render_view('page.accueil',compact('liste_event_actif'));
+       $slid_menu = Slides::get();
+       $slid_count = Slides::count();
+       $data = [
+           "liste_event_actif"=>$liste_event_actif,
+           "slid_menu"=>$slid_menu,
+           "slid_count"=>$slid_count
+       ];
+       return $this->render_view('page.accueil',compact('data'));
     }
+    public function detail_event($id){
+       $detail_event = Produits::where(["slug"=>$id])->first();
+       return $this->render_view('page.detai_event',compact("detail_event"));
+    }
+
     public function login(){
         return $this->render_view('page.login');
     }

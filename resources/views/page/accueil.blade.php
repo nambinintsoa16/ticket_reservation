@@ -5,53 +5,30 @@
         <div class="row">
             <div class="col-sm-12">
                 <div id="slider-carousel" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#slider-carousel" data-slide-to="1"></li>
-                        <li data-target="#slider-carousel" data-slide-to="2"></li>
-                    </ol>
                     
-                    <div class="carousel-inner">
-                        <div class="item active">
+                    <ol class="carousel-indicators">
+                        @for ($i = 0; $i < $parameter["data"]["data"]["slid_count"]; $i++)
+                            <li data-target="#slider-carousel" data-slide-to="0" class="{{$i == 0 ?"active":""}}"></li>
+                        @endfor  
+                    </ol>
+                  
+                    <div class="carousel-inner">  
+                        @foreach ($parameter["data"]["data"]["slid_menu"] as $items_slide)
+                        <div class="item {{$items_slide->active}}">
                             <div class="col-sm-6">
-                                <h1><span>E</span>-SHOPPER</h1>
-                                <h2>Free E-Commerce Template</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                <button type="button" class="btn btn-default get">Get it now</button>
+                                <h1>{!!$items_slide->title_slide_1!!}</h1>
+                                <h2>{{$items_slide->title_slide_2}}</h2>
+                                <p>{{$items_slide->content_slide}}</p>
+                                <button type="button" class="btn btn-default get">{{$items_slide->link_slide}}</button>
                             </div>
                             <div class="col-sm-6">
                                 <img src="{{asset("assets/images/home/girl1.jpg")}}" class="girl img-responsive" alt="" />
                                 <img src="{{asset("assets/images/home/pricing.png")}}"  class="pricing" alt="" />
                             </div>
-                        </div>
-                        <div class="item">
-                            <div class="col-sm-6">
-                                <h1><span>E</span>-SHOPPER</h1>
-                                <h2>100% Responsive Design</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                <button type="button" class="btn btn-default get">Get it now</button>
-                            </div>
-                            <div class="col-sm-6">
-                                <img src="{{asset("assets/images/home/girl2.jpg")}}" class="girl img-responsive" alt="" />
-                                <img src="{{asset("assets/images/home/pricing.png")}}"  class="pricing" alt="" />
-                            </div>
-                        </div>
-                        
-                        <div class="item">
-                            <div class="col-sm-6">
-                                <h1><span>E</span>-SHOPPER</h1>
-                                <h2>Free Ecommerce Template</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                <button type="button" class="btn btn-default get">Get it now</button>
-                            </div>
-                            <div class="col-sm-6">
-                                <img src="{{asset("assets/images/home/girl3.jpg")}}" class="girl img-responsive" alt="" />
-                                <img src="{{asset("assets/images/home/pricing.png")}}" class="pricing" alt="" />
-                            </div>
-                        </div>
-                        
+                        </div>  
+                        @endforeach
                     </div>
-                    
+                  
                     <a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
                         <i class="fa fa-angle-left"></i>
                     </a>
@@ -70,7 +47,7 @@
         <div class="row">
             <div class="col-sm-12 ">
                 <div class="features_items"><!--features_items-->
-                 @foreach ($parameter["data"]["liste_event_actif"] as $item_parent)
+                 @foreach ($parameter["data"]["data"]["liste_event_actif"] as $item_parent)
                   <h2 class="title text-center">{{$item_parent->categorie_nom}}</h2>
                    @foreach ($item_parent->Produits as $item)
                     <div class="col-sm-4">
@@ -85,7 +62,7 @@
                                                 <h2>{{$item->nom_produit}} </h2> 
                                                 <p><i class="fa fa- fa-calendar"></i>&nbsp;{{$item->jour}}</p>
                                                 <p><i class="fa fa-clock-o"></i>&nbsp;{{$item->date}} à {{$item->heure}}</p>
-                                                <p><i class="fa fa- fa-map-marker"></i>&nbsp;{{$item->lieu}}</p>
+                                                <p><i class="fa fa-map-marker"></i>&nbsp;{{$item->lieu}}</p>
                                                
                                                 <!--<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Acheter ticket</a>-->
                                             </div>
@@ -93,7 +70,7 @@
                                     </div>
                                     <div class="product-overlay">
                                         <div class="overlay-content">
-                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Acheter ticket</a>
+                                            <a href="{{route('detail_event',["id"=>$item->slug])}}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Acheter ticket</a>
                                         </div>
                                     </div>
                             </div>

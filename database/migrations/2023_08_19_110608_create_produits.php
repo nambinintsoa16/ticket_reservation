@@ -21,6 +21,7 @@ return new class extends Migration
             $table->integer('prix_debut');
             $table->integer('prix_fin');
             $table->integer('categories_id');
+            $table->sreing('description');
             $table->foreign('categories_id')->references('id')->on('categories')
             ->onDelete('restrict')
             ->onUpdate('restrict');

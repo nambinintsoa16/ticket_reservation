@@ -24,10 +24,11 @@ Route::get('/',[ticketController::class,'accueil'])->name('accueil');
 Route::get('/Authentification',[ticketController::class,'login'])->name('login');
 Route::get('/contact',[ticketController::class,'contact'])->name('contact');
 Route::get('/creer_compte',[ticketController::class,'create_register'])->name('create_register');
+Route::get('/logout',[ticketController::class,'logout'])->name('logout');
+Route::get('/detail/{id}',[ticketController::class,'detail_event'])->name('detail_event');
 
 Route::post('/ckeck_login',[ticketController::class,'ckeck_login'])->name('ckeck_login');
 Route::post('/create_user',[ticketController::class,'create_user'])->name('create_user');
-Route::get('/logout',[ticketController::class,'logout'])->name('logout');
 
 //_______________________________________________________________________________
 //___________________________________________________________________ Route admin

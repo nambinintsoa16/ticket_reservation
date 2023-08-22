@@ -13,7 +13,7 @@
                         <div class="video-gallery text-center">
                             <a href="#">
                                 <div class="iframe-img">
-                                    <img src="images/home/iframe1.png" alt="" />
+                                    <img src="{{asset('assets/images/home/iframe1.png')}}" alt="" />
                                 </div>
                                 <div class="overlay-icon">
                                     <i class="fa fa-play-circle-o"></i>
@@ -28,7 +28,7 @@
                         <div class="video-gallery text-center">
                             <a href="#">
                                 <div class="iframe-img">
-                                    <img src="images/home/iframe2.png" alt="" />
+                                    <img src="{{asset('assets/images/home/iframe2.png')}}" alt="" />
                                 </div>
                                 <div class="overlay-icon">
                                     <i class="fa fa-play-circle-o"></i>
@@ -43,7 +43,7 @@
                         <div class="video-gallery text-center">
                             <a href="#">
                                 <div class="iframe-img">
-                                    <img src="images/home/iframe3.png" alt="" />
+                                    <img src="{{asset('assets/images/home/iframe3.png')}}" alt="" />
                                 </div>
                                 <div class="overlay-icon">
                                     <i class="fa fa-play-circle-o"></i>
@@ -58,7 +58,7 @@
                         <div class="video-gallery text-center">
                             <a href="#">
                                 <div class="iframe-img">
-                                    <img src="images/home/iframe4.png" alt="" />
+                                    <img src="{{asset('assets/images/home/iframe4.png')}}" alt="" />
                                 </div>
                                 <div class="overlay-icon">
                                     <i class="fa fa-play-circle-o"></i>
@@ -71,7 +71,7 @@
                 </div>
                 <div class="col-sm-3">
                     <div class="address">
-                        <img src="images/home/map.png" alt="" />
+                        <img src="{{asset('assets/images/home/map.png')}}" alt="" />
                         <p>505 S Atlantic Ave Virginia Beach, VA(Virginia)</p>
                     </div>
                 </div>
@@ -90,12 +90,12 @@
 </footer><!--/Footer-->
 <script src="{{ asset('assets/js/jquery.js') }}"></script>
 <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('assets/js/gmaps.js') }}"></script>
 <script src="{{ asset('assets/js/jquery.prettyPhoto.js') }}"></script>
 <script src="{{ asset('assets/js/jquery.scrollUp.min.js') }}"></script>
 <script src="{{ asset('assets/js/price-range.js') }}"></script>
-<script src="{{ asset('assets/js/contact.js') }}"></script>
 <script src="{{ asset('assets/js/html5shiv.js') }}"></script>
+<script src="https://cdn-eu.seatsio.net/chart.js"></script>
 <script src="{{ asset('assets/js/main.js') }}"></script>
+@yield('jascript')
 </body>
 </html>
