@@ -1,0 +1,26 @@
+{
+    "couleur_base": "#6861ce",
+    "couleur_nav": "warning",
+    "title": "e-tikets",
+    "menu": [{
+            "text": "Accueil",
+            "icon": "flaticon-home",
+            "rout": "accueil"
+        },
+        {
+            "text": "Contact",
+            "icon": "flaticon-database",
+            "rout": "contact" 
+        },{
+            "text": "Créer compte",
+            "icon": "flaticon-database",
+            "rout": "create_register" 
+        },{
+            "text": "Cart",
+            "icon": "fa fa-shopping-cart",
+            "rout": "create_register" 
+        }
+    ]
+}
+
+

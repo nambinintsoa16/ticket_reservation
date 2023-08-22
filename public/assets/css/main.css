@@ -8,7 +8,7 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background:;
+  background:#fff;
   position: relative;
   font-weight:400px;
 }
@@ -835,7 +835,7 @@ h2.title:before{
 
 
 h2.title {
-  color: #FE980F;
+  color: #0f13fe;
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
   font-weight: 700;
@@ -972,11 +972,11 @@ h2.title {
 }
 
 .choose {
-  border-top: 1px solid #F7F7F0;
+  border-top: 1px solid #6d80ee;
 }
 
 .choose ul li a {
-  color: #B3AFA8;
+  color: #000000;
   font-family: 'Roboto', sans-serif;
   font-size: 13px;
   padding-left: 0;
@@ -989,7 +989,8 @@ h2.title {
 
 .choose ul li a:hover{
 	background:none;
-	color:#FE980F;
+	color:none;
+  cursor:default;
 }
 
 .category-tab {

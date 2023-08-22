@@ -30,16 +30,15 @@
             <div class="row">
                 <div class="col-sm-4">
                     <div class="logo pull-left">
-                        <a href="index.html"><img src=" {{ asset('assets/images/home/logo.png') }} " alt="" /></a>
+                        <a href="{{route('accueil')}}"><img src=" {{ asset('assets/images/home/logo.png') }} " alt="" /></a>
                     </div>
                 </div>
                 <div class="col-sm-8">
                     <div class="shop-menu pull-right">
                         <ul class="nav navbar-nav">
-                            <li><a href="{{route('accueil')}}" class="active">Accueil</a></li>
-                            <li><a href="{{route('contact')}}">Contact</a></li>
-                            <li><a href="{{route('create_register')}}">Créer compte</a></li>
-                            <li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+                            @foreach ($parameter['menu']['menu'] as $menu_item)
+                                <li><a href="{{route($menu_item['rout'])}}" class="{{ Str::lower($menu_item["text"]) == Str::lower(Request::segment(1)) ? "active" :""}}"><i class="{{$menu_item['icon']}}"></i>{{$menu_item["text"]}}</a></li>
+                            @endforeach
                             @if (Route::has('login'))
                                 @auth
                                      <li><a href="{{route('logout')}}"><i class="fa fa-lock"></i>se déconnecter</a></li>

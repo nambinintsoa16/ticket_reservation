@@ -20,8 +20,8 @@ return new class extends Migration
             $table->time('heure');
             $table->integer('prix_debut');
             $table->integer('prix_fin');
-            $table->integer('id_category');
-            $table->foreign('id_category')->references('id')->on('categories')
+            $table->integer('categories_id');
+            $table->foreign('categories_id')->references('id')->on('categories')
             ->onDelete('restrict')
             ->onUpdate('restrict');
             $table->integer('statut');
